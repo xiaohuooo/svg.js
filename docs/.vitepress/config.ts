@@ -1,0 +1,92 @@
+import { defineConfig } from 'vitepress'
+import pkg from '../../package.json'
+
+let nav = ()=> {
+  return [
+    { text: "文档", link: "/guide/index" ,activeMatch: '^/guide' },
+
+    {
+      text: "关于",
+      items: [
+        {
+          text: "github",
+          link: "https://github.com/xiaohuooo",
+        },
+        {
+          text: "源码",
+          link: "https://github.com/xiaohuooo/noui",
+        }
+      ],
+    },
+    {
+      text: pkg.version,
+      items: [
+      ]
+    }
+  ]
+}
+
+export default defineConfig({
+  title: "Noui",
+  description: "前端进阶网站",
+  lastUpdated: true,
+  base: "/Noui",
+  lang: 'zh-CN',
+  head: [["link", { rel: "icon", type: "image/png", href: "logo.svg" }]],
+  locales: {
+    root: { label: '简体中文' },
+    en: { label: 'English', link: '/en' },
+  },
+  markdown: {
+    headers: {
+      level: [0, 0]
+    },
+    // options for markdown-it-anchor
+    // @ts-ignore
+    anchor: { permalink: false },
+    // options for markdown-it-toc
+    // @ts-ignore
+    toc: { includeLevel: [1, 2] },
+    // light: #f9fafb, dark: --vp-code-block-bg
+    theme: { light: 'github-light', dark: 'github-dark' },
+  },
+  themeConfig: {
+    logo: "/logo.svg",
+    nav: nav(),
+    sidebar: {
+      "/guide/": [
+        {
+          text: "指南",
+          items: [
+            {
+              text: "首页",
+              link: "/guide/index",
+            },
+            {
+              text: "安装",
+              link: "/guide/install",
+            },
+            {
+              text: "开始",
+              link: "/guide/start",
+            },
+          ],
+        },
+      ],
+    },
+    editLink: {
+      pattern: 'https://github.com/xiaohuooo/noui/edit/main/docs/:path',
+      text: '在 GitHub 上编辑此页面'
+    },
+    socialLinks: [{ icon: "github", link: "https://github.com/xiaohuooo/noui" }],
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2019-present hu'
+    },
+    algolia: {
+      appId: '8J64VVRP8K',
+      apiKey: 'a18e2f4cc5665f6602c5631fd868adfd',
+      indexName: 'noui'
+    },
+  },
+});
