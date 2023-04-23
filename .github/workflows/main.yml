@@ -3,7 +3,7 @@ name: build to my github
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -15,7 +15,7 @@ jobs:
           node-version: 16
       - run: pnpm install
       - name: Build
-        run: pnpm run build
+        run: pnpm docs:build
 
       # - name: CreateTag
       #   run git tag -a
