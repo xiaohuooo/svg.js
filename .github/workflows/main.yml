@@ -13,6 +13,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - run: npm i pnpm -g
       - run: pnpm install
       - name: Build
         run: pnpm docs:build
