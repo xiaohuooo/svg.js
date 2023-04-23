@@ -12,7 +12,7 @@ hero:
     alt: logo
   actions:
     - theme: brand
-      text: component
+      text: Start
       link: /components/button/
     - theme: alt
       text: GitHub
