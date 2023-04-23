@@ -27,12 +27,12 @@ let nav = ()=> {
 }
 
 export default defineConfig({
-  title: "Noui",
+  title: "Svg",
   description: "前端进阶网站",
   lastUpdated: true,
   base: "/Noui",
   lang: 'zh-CN',
-  head: [["link", { rel: "icon", type: "image/png", href: "logo.svg" }]],
+  head: [["link", { rel: "icon", type: "image/png", href: "https://svgjs.dev/docs/3.0/assets/images/logo-svg-js-01d-128.png" }]],
   locales: {
     root: { label: '简体中文' },
     en: { label: 'English', link: '/en' },
@@ -51,7 +51,7 @@ export default defineConfig({
     theme: { light: 'github-light', dark: 'github-dark' },
   },
   themeConfig: {
-    logo: "/logo.svg",
+    logo: "https://svgjs.dev/docs/3.0/assets/images/logo-svg-js-01d-128.png",
     nav: nav(),
     sidebar: {
       "/guide/": [

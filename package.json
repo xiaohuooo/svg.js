@@ -10,21 +10,10 @@
     "docs:serve": "vitepress serve docs"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.0.1",
-    "cross-env": "^7.0.3",
-    "cz-conventional-changelog": "^3.3.0",
     "prettier": "^2.8.3",
     "vitepress": "^1.0.0-alpha.73"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "dependencies": {
-    "husky": "^5.1.3"
-  },
+  "config": {},
   "engines": {
     "node": ">=16.0.0"
   },

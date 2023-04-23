@@ -4,7 +4,7 @@ layout: home
 title: 首页
 
 hero:
-  name: Noui
+  name: Svg
   text: 前端好好玩
   tagline: 前端知识大全
   image:
@@ -12,7 +12,7 @@ hero:
     alt: logo
   actions:
     - theme: brand
-      text: 组件
+      text: 开始
       link: /guide/
     - theme: alt
       text: GitHub
@@ -22,12 +22,12 @@ hero:
       link: /me/
 features:
   - icon: ⚡️
-    title: Vue3组件库
-    details: 基于vite打包和TypeScript开发
+    title: Focus on Your Content
+    details: Effortlessly create beautiful documentation sites with just markdown.
   - icon: 🖖
-    title: 仅供学习使用
-    details: 倾向于Vue3组件库的学习，请勿用于实际生产项目
+    title: Enjoy the Vite DX
+    details: Instant server start, lightning fast hot updates, and leverage Vite ecosystem plugins.
   - icon: 🛠️
-    title: 按需引入
-    details: 直接支持按需引入无需配置任何插件。
+    title: Ship Fast Sites
+    details: Fast initial load with static HTML, fast post-load navigation with client-side routing.
 ---
