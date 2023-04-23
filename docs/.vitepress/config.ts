@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { demoBlockPlugin } from 'vitepress-theme-demoblock'
 import pkg from '../../package.json'
 
 let nav = ()=> {
@@ -21,6 +22,14 @@ let nav = ()=> {
     {
       text: pkg.version,
       items: [
+        {
+          text: "3.1",
+          link: "https://svgjs.dev/docs/3.1/",
+        },
+        {
+          text: "2.7",
+          link: "https://svgjs.dev/docs/2.7/",
+        }
       ]
     }
   ]
@@ -49,6 +58,11 @@ export default defineConfig({
     toc: { includeLevel: [1, 2] },
     // light: #f9fafb, dark: --vp-code-block-bg
     theme: { light: 'github-light', dark: 'github-dark' },
+    config: (md) => {
+      md.use(demoBlockPlugin, {
+        cssPreprocessor: 'less'
+      })
+    }
   },
   themeConfig: {
     logo: "https://svgjs.dev/docs/3.0/assets/images/logo-svg-js-01d-128.png",

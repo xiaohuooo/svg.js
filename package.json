@@ -1,18 +1,18 @@
 {
   "name": "vitepress-site",
-  "version": "1.0.0",
+  "version": "3.0",
   "main": "index.js",
   "author": "<453650969@qq.com>",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+    "docs:dev": "yarn run register:components && vitepress dev docs",
+    "docs:build": "yarn run register:components && vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "register:components": "vitepress-rc"
   },
   "devDependencies": {
     "prettier": "^2.8.3",
-    "vitepress": "^1.0.0-alpha.73",
-    "vue": "^3.2.47"
+    "vitepress": "^1.0.0-alpha.73"
   },
   "config": {},
   "engines": {
@@ -24,5 +24,9 @@
         "@algolia/client-search"
       ]
     }
+  },
+  "dependencies": {
+    "@svgdotjs/svg.js": "^3.1.2",
+    "vitepress-theme-demoblock": "^2.0.2"
   }
 }
