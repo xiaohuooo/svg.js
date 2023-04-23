@@ -4,7 +4,7 @@ layout: home
 title: Home
 
 hero:
-  name: Noui
+  name: Svg
   text: Front end good fun
   tagline: Front end knowledge
   image:

@@ -30,7 +30,7 @@ export default defineConfig({
   title: "Svg",
   description: "前端进阶网站",
   lastUpdated: true,
-  base: "/Noui",
+  base: "/Svg.js",
   lang: 'zh-CN',
   head: [["link", { rel: "icon", type: "image/png", href: "https://svgjs.dev/docs/3.0/assets/images/logo-svg-js-01d-128.png" }]],
   locales: {
@@ -86,7 +86,7 @@ export default defineConfig({
     algolia: {
       appId: '8J64VVRP8K',
       apiKey: 'a18e2f4cc5665f6602c5631fd868adfd',
-      indexName: 'noui'
+      indexName: 'Svg.js'
     },
   },
 });
