@@ -1,4 +1,4 @@
-// node_modules/.pnpm/registry.npmmirror.com+@svgdotjs+svg.js@3.1.2/node_modules/@svgdotjs/svg.js/dist/svg.esm.js
+// node_modules/@svgdotjs/svg.js/dist/svg.esm.js
 var methods$1 = {};
 var names = [];
 function registerMethods(name, m) {

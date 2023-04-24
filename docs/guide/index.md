@@ -18,17 +18,26 @@ SVG.js 很快。显然没有 vanilla js 快，但比竞争对手快很多倍：
 
 ```vue
 <template>
-  <div ref="svg" id="content"></div>
+  <div ref="svg" id="drawing"></div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
-// import { SVG } from '@svgdotjs/svg.js'
 const svg = ref('')
 onMounted(() => {
-  console.log(Vue)
-//   svg.value = SVG().addTo('#content').size(300, 300)
-//   svg.value.rect(100, 100).attr({ fill: '#f06' })
+  svg.value = SVG().addTo('#drawing').size(400, 300)
+  // 定义渐变
+  const gradient = svg.value.gradient('linear', add => {
+    add.stop(0, '#fff')
+    add.stop(1, '#000')
+  })
+  // 循环生成 10000 个矩形，并添加到画布上
+  for (let i = 0; i < 10000; i++) {
+    svg.value
+      .rect(5, 5)
+      .fill(gradient)
+      .move(Math.random() * 395, Math.random() * 295)
+  }
 })
 </script>
 ```
@@ -37,7 +46,7 @@ onMounted(() => {
 
 指数：
 
-- rects：生成 10000 个矩形
+- rect：生成 10000 个矩形
 - fill：生成 10000 个填充颜色的矩形
 - gradient：生成 10000 个带有渐变填充的矩形
 

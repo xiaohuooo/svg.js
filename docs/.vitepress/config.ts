@@ -60,6 +60,7 @@ export default defineConfig({
     theme: { light: 'github-light', dark: 'github-dark' },
     config: (md) => {
       md.use(demoBlockPlugin, {
+        scriptImports: ["import { SVG } from '@svgdotjs/svg.js'"],
         cssPreprocessor: 'less'
       })
     }
@@ -83,6 +84,10 @@ export default defineConfig({
             {
               text: "开始",
               link: "/guide/start",
+            },
+            {
+              text: "容器元素",
+              link: "/guide/container",
             },
           ],
         },

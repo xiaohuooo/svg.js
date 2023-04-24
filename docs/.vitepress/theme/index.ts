@@ -6,8 +6,6 @@ export default {
   ...Theme,
   enhanceApp(ctx) {
     Theme.enhanceApp(ctx) 
-    ctx.app.config.globalProperties.$SVG = SVG
     useComponents(ctx.app)
-    console.log(ctx.app);
   }
 };
