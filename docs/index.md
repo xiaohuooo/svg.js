@@ -5,8 +5,8 @@ title: 首页
 
 hero:
   name: Svg
-  text: 前端好好玩
-  tagline: 前端知识大全
+  text: SVG 的轻量级库
+  tagline: 用于操作和动画化 SVG 的轻量级库。
   image:
     src: /logo.svg
     alt: logo
