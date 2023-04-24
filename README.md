@@ -1,6 +1,6 @@
 # SVG.js
 
-[![Build Status](https://travis-ci.org/svgdotjs/svg.js.svg?branch=master)](https://travis-ci.org/svgdotjs/svg.js)
+[![Build Status](https://github.com/xiaohuooo/svg.js/actions/workflows/main.yml/badge.svg)](https://travis-ci.org/svgdotjs/svg.js)
 [![Coverage Status](https://coveralls.io/repos/github/svgdotjs/svg.js/badge.svg?branch=master)](https://coveralls.io/github/svgdotjs/svg.js?branch=master)
 [![Cdnjs](https://img.shields.io/cdnjs/v/svg.js.svg)](https://cdnjs.com/libraries/svg.js)
 [![jsdelivr](https://badgen.net/jsdelivr/v/npm/@svgdotjs/svg.js)](https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js)
