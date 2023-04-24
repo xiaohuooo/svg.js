@@ -67,6 +67,33 @@ rect = draw.rect(100, 100).fill('#f06')
 
 ## 疯狂的动画
 
+:::demo 使用 Button 的样式
+
+```vue
+<template>
+  <div ref="svg" id="drawing1"></div>
+</template>
+<script setup>
+import { ref, onMounted } from 'vue'
+const svg = ref('')
+onMounted(() => {
+  // 创建SVG画布
+  svg.value = SVG().addTo('#drawing1').size(400, 300)
+  // 创建一个圆形
+  var circle = svg.value.circle(50).attr({ fill: '#f06' })
+  // 创建一个矩形
+  var rect = svg.value.rect(50, 50).attr({ fill: '#09c' })
+  // 基于时间的动画
+  rect.animate(1000).move(200, 200).rotate(15).loop()
+  rect.on('click', () => {
+    alert('You clicked the rectangle!')
+  })
+})
+</script>
+```
+
+:::
+
 ## 还有更多...
 
 - 关于大小，位置，转换，颜色的动画，...
