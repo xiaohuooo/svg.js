@@ -96,6 +96,101 @@ onMounted(() => {
 
 ## 还有更多...
 
+:::demo
+
+```vue
+<template>
+  <div ref="svg" id="drawing2"></div>
+</template>
+<script setup>
+import { ref, onMounted } from 'vue'
+const svg = ref('')
+onMounted(() => {
+  // 设置画布大小
+  const canvasWidth = 400
+  const canvasHeight = 300
+  // 创建SVG画布
+  svg.value = SVG().addTo('#drawing2').size(canvasWidth, canvasHeight)
+
+  // 创建粒子
+  const particleCount = 100
+  let particles = []
+  for (let i = 0; i < particleCount; i++) {
+    const particle = svg.value
+      .circle(Math.random() * 5 + 1)
+      .center(canvasWidth / 2, canvasHeight / 2)
+      .fill(getRandomColor())
+    particles.push({
+      element: particle,
+      x: canvasWidth / 2,
+      y: canvasHeight / 2,
+      speed: Math.random() * 10 + 5,
+      angle: Math.random() * 360,
+      gravity: 0.5,
+      friction: 0.95,
+      isFalling: false,
+    })
+  }
+
+  // 更新粒子位置
+  function updateParticles() {
+    let allFalling = true // 标记所有粒子是否都落下了
+    particles.forEach(particle => {
+      if (!particle.isFalling) {
+        // 粒子炸开
+        particle.x += Math.cos(particle.angle) * particle.speed
+        particle.y += Math.sin(particle.angle) * particle.speed
+        particle.speed *= particle.friction
+        particle.angle += Math.random() * 0.4 - 0.2
+        if (particle.speed < 1) {
+          particle.isFalling = true
+        }
+        // 粒子炸开...
+        allFalling = false
+      } else {
+        // 粒子自然落下
+        particle.y += particle.gravity
+        particle.gravity *= 1.1
+        if (particle.y > canvasHeight - particle.element.attr('r')) {
+          particle.y = canvasHeight - particle.element.attr('r')
+          particle.gravity = 0.5
+        }
+      }
+      if (allFalling) {
+        // 所有粒子都落下了，重新放回初始位置
+        particles.forEach(particle => {
+          particle.x = canvasWidth / 2
+          particle.y = canvasHeight / 2
+          particle.speed = Math.random() * 10 + 5
+          particle.angle = Math.random() * 360
+          particle.gravity = 0.5
+          particle.friction = 0.95
+          particle.isFalling = false
+        })
+      }
+      particle.element.center(particle.x, particle.y)
+    })
+    setTimeout(updateParticles, 30)
+  }
+
+  // 随机颜色函数
+  function getRandomColor() {
+    const letters = '0123456789ABCDEF'
+    let color = '#'
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)]
+    }
+    return color
+  }
+
+  // 开始动画
+  updateParticles()
+})
+</script>
+```
+
+:::
+
 - 关于大小，位置，转换，颜色的动画，...
 - 模块化结构，无痛伸展
 - 提供各种有用的插件
