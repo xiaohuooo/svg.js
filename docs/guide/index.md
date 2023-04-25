@@ -14,7 +14,7 @@ SVG.js 没有依赖关系，旨在尽可能小，同时提供接近完整的 SVG
 
 SVG.js 很快。显然没有 vanilla js 快，但比竞争对手快很多倍：
 
-:::demo 
+:::demo
 
 ```vue
 <template>
@@ -67,7 +67,7 @@ rect = draw.rect(100, 100).fill('#f06')
 
 ## 疯狂的动画
 
-:::demo 
+:::demo
 
 ```vue
 <template>
@@ -128,7 +128,7 @@ onMounted(() => {
       angle: Math.random() * 360,
       gravity: 0.5,
       friction: 0.95,
-      isFalling: false,
+      isFalling: false
     })
   }
 
